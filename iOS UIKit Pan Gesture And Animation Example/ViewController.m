@@ -7,6 +7,7 @@
 
 #import "ViewController.h"
 
+
 @interface ViewController ()
 
 @end
@@ -15,6 +16,20 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
+  
+  CGRect draggableViewFrame = CGRectZero;
+  draggableViewFrame.size = [ViewController draggableViewSize];
+  _draggableView = [[UIView alloc] initWithFrame:draggableViewFrame];
+  [_draggableView setBackgroundColor:[ViewController draggableViewColor]];
+  [self.view addSubview:_draggableView];
+}
+
++ (UIColor *)draggableViewColor {
+  return UIColor.blueColor;
+}
+
++ (CGSize)draggableViewSize {
+  return CGSizeMake(100, 100);
 }
 
 

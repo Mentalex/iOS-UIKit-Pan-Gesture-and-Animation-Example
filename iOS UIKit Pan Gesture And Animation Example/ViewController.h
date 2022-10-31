@@ -9,6 +9,10 @@
 
 @interface ViewController : UIViewController
 
+@property UIView *draggableView;
+
++ (UIColor *)draggableViewColor;
++ (CGSize)draggableViewSize;
 
 @end
 
