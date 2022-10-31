@@ -17,12 +17,20 @@
 - (void)viewDidLoad {
   [super viewDidLoad];
   
+  [self setUpAndAddDraggableView];
+}
+
+#pragma mark - Private Methods
+
+- (void)setUpAndAddDraggableView {
   CGRect draggableViewFrame = CGRectZero;
   draggableViewFrame.size = [ViewController draggableViewSize];
   _draggableView = [[UIView alloc] initWithFrame:draggableViewFrame];
   [_draggableView setBackgroundColor:[ViewController draggableViewColor]];
   [self.view addSubview:_draggableView];
 }
+
+#pragma mark - Public Class Methods
 
 + (UIColor *)draggableViewColor {
   return UIColor.blueColor;
